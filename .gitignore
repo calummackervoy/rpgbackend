@@ -1,0 +1,13 @@
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+*.sqlite3
+media
+bin/
+include/
+lib/
+local/
+
+# rpgbackend/staticfiles/

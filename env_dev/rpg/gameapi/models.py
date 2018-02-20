@@ -6,7 +6,7 @@ from django.db import models
 
 class ImageContent(models.Model):
     # below: models.URLField()?
-    src = models.CharField(max_length=100, null=True)
+    src = models.CharField(max_length=100, blank=True, null=True, verbose_name ='source')
     priority = models.PositiveSmallIntegerField(default=0)
     #tells Python how to display a human-readable representation of an object
     def __str__(self):
@@ -33,7 +33,7 @@ class Option(models.Model):
         return self.text
 
 class Page(models.Model):
-    title = models.CharField(max_length=100, null=True)
+    title = models.CharField(max_length=100, blank=True, null=True)
     # should below be many-to-one? then duplicate images/text that are reused,
     # with new priorities
     content = models.ManyToManyField(TextContent)

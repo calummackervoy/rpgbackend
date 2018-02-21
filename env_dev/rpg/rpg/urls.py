@@ -13,7 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import include, url
 from django.contrib import admin
 from rpg.views import *
 
@@ -21,4 +21,7 @@ urlpatterns = [
     url(r'^$', root_view),
     url(r'^admin/', admin.site.urls),
     url(r'^hello/$', hello),
+    url(r'^meta/$', display_meta),
+    url(r'^newcharacter/$', new_character), #TODO: character/new?
+    #url(r'^', include('gameapi.urls')), #include gameapi's URLs
 ]

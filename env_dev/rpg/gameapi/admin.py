@@ -13,6 +13,7 @@ class PageAdmin(admin.ModelAdmin):
     #order fields are shown in edit/create form (fields left out are excluded)
     #fields = ('title', 'authors', 'publisher', 'publication_date')
     filter_horizontal = ('content','images','options')
+    #raw_id_fields = ('example',) #similar to above but for foreign keys
 
 admin.site.register(ImageContent)
 admin.site.register(TextContent, TextContentAdmin)

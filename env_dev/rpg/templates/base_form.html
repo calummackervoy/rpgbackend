@@ -1,9 +1,6 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
-<html lang="en">
-<head>
-    <title>{% block title %}{% endblock %}</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
+  {% block heading %}{% endblock %}
   {% if form.errors %}
       <p style="color: red;">
         Please correct the error{{ form.errors|pluralize }} below.
@@ -11,7 +8,16 @@
   {% endif %}
   {% block formData %}{% endblock %}
 
-  <hr/>
-  {% block footer %}{% endblock %}
-</body>
-</html>
+  <div class="row">
+    <div class="col-md-6">
+      <p>
+        CSS test this should take up half the screen
+      </p>
+    </div>
+    <div class="col-md-6">
+      <p>
+        CSS test this should take up the other half the screen
+      </p>
+    </div>
+  </div>
+{% endblock %}
